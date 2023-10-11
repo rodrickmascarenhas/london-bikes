@@ -5,7 +5,7 @@ The London bicycle hires dataset is a collection of information about the usage 
 
 Here the data includes the number of hires, the start and end dates and stations, the bike IDs, and the trip duration in minutes. The data can be used for various purposes, such as analyzing the patterns and trends of bike sharing, identifying the most popular routes and stations, and evaluating the impact of bike sharing on transport and environment.
 
-## Data preparation instructions
+### Data Preparation
 
 Create new project in Google Cloud Platform > Set up Billing
 IAM > Find account associated with your project > Add the BigQuery Data Viewer permissions with "Owner"
@@ -23,7 +23,7 @@ Expand the view and select london_bikes > (cycle_hire, cycle_stations) > Copy to
 ![copy-dataset](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/1a018ba7-6e92-4085-baec-323cbb3548f6)
 
 
-## Data cleansing
+### Data cleansing
 
 Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation
 
@@ -60,11 +60,11 @@ Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth
 
 Add BillingProject > Add Project > Add Dataset
 
-## Exploratory Data Analysis
+### Exploratory Data Analysis
 
 
 
-## Results
+### Results
 
 <ul>
 <li>2016 was the year with the most ride time and the the longest aver trip duration.</li>
