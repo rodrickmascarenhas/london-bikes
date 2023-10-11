@@ -8,18 +8,34 @@ Here the data includes the number of hires, the start and end dates and stations
 ## Data preparation instructions
 
 Create new project in Google Cloud Platform > Set up Billing
-
-image
-
 IAM > Find account associated with your project > Add the BigQuery Data Viewer permissions with "Owner"
 
-image
+![biq-query-setup](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/97a4ccae-9189-4356-b40c-d171fa4e9fdd)
+
 
 Search for "bigquery-public-data" datasets and click the starred icon
 
-image
+![big-query-dataset](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/eea9bcb6-9f09-4ae8-84c8-ce470327947a)
+
 
 Expand the view and select london_bikes > (cycle_hire, cycle_stations) > Copy to a dataset in your project
+
+![copy-dataset](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/1a018ba7-6e92-4085-baec-323cbb3548f6)
+
+
+## Data cleansing
+
+Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation
+
+![dataprep-transform](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/2bd7b1fa-58c9-4b42-ac38-61b6bfbde1f3)
+
+
+Select the original dataset as the destination (Note: Ensure the region in dataset is same as original dataset) > Run the flow > Completed
+
+![dataprep-flow](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/1b1cdc78-fb85-49bd-a8ca-e68fb7f90f07)
+
+
+Perform the following SQL query to join the tables > Save as 'query.sql'
 
 ```sql
 with h as (SELECT * FROM `bigquery-ids.london_bikes.cycle_hire`),
@@ -34,18 +50,6 @@ from h
 left join ss on start_station_id = ss.Id
 left join es on end_station_id = es.Id limit 10000;
 ```
-
-## Data cleansing
-
-Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation
-
-image
-
-Select the original dataset as the destination (Note: Ensure the region in dataset is same as original dataset) > Run the flow > Completed
-
-Perform the following SQL query to join the tables > Save as 'query.sql'
-
-image
 
 Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth
 
