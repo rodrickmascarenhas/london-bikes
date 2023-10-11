@@ -1,5 +1,5 @@
 # London Bike-sharing Tips
-You can download the dataset from my Github repository: https://rodrickmascarenhas.github.io/london-bikes/
+You can download the dataset from my Github repository: https://github.com/rodrickmascarenhas/london-bikes/
 
 The London bicycle hires dataset is a collection of information about the usage of the Santander Cycle Hire Scheme in London, which is a public bicycle sharing system that allows people to rent bikes from different locations across the city.
 
