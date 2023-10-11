@@ -7,25 +7,25 @@ Here the data includes the number of hires, the start and end dates and stations
 
 ### Data Preparation
 
-Create new project in Google Cloud Platform > Set up Billing
-IAM > Find account associated with your project > Add the BigQuery Data Viewer permissions with "Owner"
+<p>Create new project in Google Cloud Platform > Set up Billing
+IAM > Find account associated with your project > Add the BigQuery Data Viewer permissions with "Owner"</p>
 
 ![biq-query-setup](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/97a4ccae-9189-4356-b40c-d171fa4e9fdd)
 
 
-Search for "bigquery-public-data" datasets and click the starred icon
+<p>Search for "bigquery-public-data" datasets and click the starred icon</p>
 
 ![big-query-dataset](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/eea9bcb6-9f09-4ae8-84c8-ce470327947a)
 
 
-Expand the view and select london_bikes > (cycle_hire, cycle_stations) > Copy to a dataset in your project
+<p>Expand the view and select london_bikes > (cycle_hire, cycle_stations) > Copy to a dataset in your project</p>
 
 ![copy-dataset](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/1a018ba7-6e92-4085-baec-323cbb3548f6)
 
 
 ### Data cleansing
 
-Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation
+<p>Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation</p>
 
 ```python
 filter type: missing missing: end_station_id action: Delete
@@ -35,7 +35,7 @@ settype col: start_station_id lockDataType: true type: Integer
 settype col: end_station_id lockDataType: true type: Integer
 ```
 
-Select the original dataset as the destination (Note: Ensure the region in dataset is same as original dataset) > Run the flow > Completed
+<p>Select the original dataset as the destination (Note: Ensure the region in dataset is same as original dataset) > Run the flow > Completed</p>
 
 ![dataprep-flow](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/1b1cdc78-fb85-49bd-a8ca-e68fb7f90f07)
 
@@ -56,9 +56,11 @@ left join ss on start_station_id = ss.Id
 left join es on end_station_id = es.Id limit 10000;
 ```
 
-Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth
+<p>Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth</p>
 
-Add BillingProject > Add Project > Add Dataset
+
+<p>Add BillingProject > Add Project > Add Dataset</p>
+
 
 ### Exploratory Data Analysis
 
