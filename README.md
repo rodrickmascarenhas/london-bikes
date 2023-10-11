@@ -27,8 +27,13 @@ Expand the view and select london_bikes > (cycle_hire, cycle_stations) > Copy to
 
 Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation
 
-![dataprep-transform](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/2bd7b1fa-58c9-4b42-ac38-61b6bfbde1f3)
-
+```python
+filter type: missing missing: end_station_id action: Delete
+sort order: start_station_name
+replacepatterns col: start_station_name with: 'Clapham Common Northside, Clapham Comm' on: 'Clapham Common North Side, Clapham Comm' global: true ignoreCase: true
+settype col: start_station_id lockDataType: true type: Integer
+settype col: end_station_id lockDataType: true type: Integer
+```
 
 Select the original dataset as the destination (Note: Ensure the region in dataset is same as original dataset) > Run the flow > Completed
 
