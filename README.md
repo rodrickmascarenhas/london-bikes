@@ -27,6 +27,9 @@ IAM > Find account associated with your project > Add the BigQuery Data Viewer p
 
 <p>Go to DataPrep > Design a workflow ingesting the 'cycle_hire' dataset > Edit Recipe > Data Transformation</p>
 
+![edit-recipe](https://github.com/rodrickmascarenhas/london-bikes/assets/30309234/3089a3e3-2e82-4f2b-82c0-eb0292d7f890)
+
+
 ```python
 filter type: missing missing: end_station_id action: Delete
 sort order: start_station_name
@@ -55,16 +58,15 @@ from h
 left join ss on start_station_id = ss.Id
 left join es on end_station_id = es.Id limit 10000;
 ```
-
-<p>Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth</p>
-
-
-<p>Add BillingProject > Add Project > Add Dataset</p>
-
+<ul>
+<li>Go to Tableau > Data > Add Data Source > Google BigQuery > Sign In using OAuth</li>
+<li>Add BillingProject > Add Project > Add Dataset</li>
+</ul>
 
 ### Exploratory Data Analysis
 
-
+<script type='module' src='https://prod-ca-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+<tableau-viz id='tableau-viz' src='https://prod-ca-a.online.tableau.com/t/rodrickfm/views/LondonBikes/LondonBikesTrips' width='1000' height='840' hide-tabs toolbar='bottom' ></tableau-viz>
 
 ### Results
 
