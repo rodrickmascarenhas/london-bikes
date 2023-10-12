@@ -66,7 +66,7 @@ left join es on end_station_id = es.Id limit 10000;
 ### Exploratory Data Analysis
 
 <script type='module' src='https://prod-ca-a.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
-<tableau-viz id='tableau-viz' src='https://prod-ca-a.online.tableau.com/t/rodrickfm/views/LondonBikes/LondonBikesTrips' width='1000' height='840' hide-tabs toolbar='bottom' ></tableau-viz>
+<tableau-viz id='tableau-viz' src='https://prod-ca-a.online.tableau.com/t/rodrickfm/views/LondonBikes/LondonBikesTrips' width='1000' height='840' hide-tabs toolbar='bottom'></tableau-viz>
 
 ### Results
 
